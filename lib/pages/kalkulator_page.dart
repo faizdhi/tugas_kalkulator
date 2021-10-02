@@ -53,7 +53,6 @@ class _KalkulatorState extends State<Kalkulator> {
       for (int i = 0; i < jsonjadi.length; i++) {
         asep.add(jsonjadi[(i + 1).toString()]);
       }
-      print(asep);
     } catch (exception) {
       cekKosong = !cekKosong;
     }
