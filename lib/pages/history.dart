@@ -56,37 +56,34 @@ class _HistoryState extends State<History> {
   }
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("HISTORY PERHITUNGAN"),
-        ),
-        body: ListView.builder(
-          itemCount: asep.length,
-          padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
-          itemBuilder: (context, index) {
-            return ListTile(
-              title: Text("HISTORY ${index + 1}"),
-              subtitle: Text(
-                "${asep[index]}",
-                style: TextStyle(fontSize: 20),
-              ),
-              trailing: IconButton(
-                onPressed: () {
-                  deleteData(index);
-                },
-                icon: Icon(Icons.delete),
-              ),
-            );
-          },
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          child: Icon(Icons.arrow_back),
-        ),
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("HISTORY PERHITUNGAN"),
+      ),
+      body: ListView.builder(
+        itemCount: asep.length,
+        padding: EdgeInsets.fromLTRB(0, 0, 0, 10),
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text("HISTORY ${index + 1}"),
+            subtitle: Text(
+              "${asep[index]}",
+              style: TextStyle(fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: () {
+                deleteData(index);
+              },
+              icon: Icon(Icons.delete),
+            ),
+          );
+        },
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).pop();
+        },
+        child: Icon(Icons.arrow_back),
       ),
     );
   }
